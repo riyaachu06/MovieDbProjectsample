@@ -19,8 +19,14 @@ public class Title_Adapter extends RecyclerView.Adapter {
 
     private List<Result> dataset=new ArrayList<>();
     Context context;
-    private MainActivity mListener;
+    private OnItemClickListener mListener;
+    private MainActivity Listener2;
 
+
+
+    public void setOnItemClickListener(MainActivity Listener) {
+        Listener2=Listener;
+    }
 
     public Title_Adapter(Context context, List<Result> dataset) {
         this.context = context;
@@ -46,7 +52,7 @@ public class Title_Adapter extends RecyclerView.Adapter {
         }
         if (dataset.size() > 1) {
             if (position == dataset.size() - 1) {
-                mListener.drawnext();
+                Listener2.drawnext();
             }
         }
     }
@@ -70,7 +76,9 @@ public class Title_Adapter extends RecyclerView.Adapter {
     }
 
 
-    public void setOnItemClickListener(MainActivity mainActivity) {
-        mListener = mainActivity;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
     }
+
+
 }

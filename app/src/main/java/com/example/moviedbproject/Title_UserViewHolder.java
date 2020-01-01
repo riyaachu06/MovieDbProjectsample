@@ -11,9 +11,9 @@ import com.example.moviedbproject.modelclass.Result;
 public class Title_UserViewHolder extends RecyclerView.ViewHolder {
 
     private TitleLayoutBinding titlebinding;
-    private MainActivity mListener;
+    private OnItemClickListener mListener;
 
-    public Title_UserViewHolder(TitleLayoutBinding titlebinding, MainActivity listener) {
+    public Title_UserViewHolder(TitleLayoutBinding titlebinding, OnItemClickListener listener) {
         super(titlebinding.getRoot());
         this.titlebinding = titlebinding;
         mListener=listener;
